@@ -5,7 +5,7 @@ class ApplicationService {
     return await api.get("/application");
   };
   delete = async (id) => {
-    return await api.delete(`/application/${id}`);
+    await api.delete(`/application/${id}`);
   };
 }
 

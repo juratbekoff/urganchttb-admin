@@ -1,5 +1,11 @@
 import { Sidebar } from "./components/";
-import { AppPage, DashboardPage, CatalogsPage, InstitutionPage } from "./pages";
+import {
+  AppPage,
+  DashboardPage,
+  CatalogsPage,
+  InstitutionPage,
+  AddCatalogPage,
+} from "./pages";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -12,6 +18,7 @@ function App() {
         <Route path="/applications" element={<AppPage />} />
         <Route path="/catalogs" element={<CatalogsPage />} />
         <Route path="/institutions" element={<InstitutionPage />} />
+        <Route path="/add" element={<AddCatalogPage />} />
       </Routes>
     </div>
   );

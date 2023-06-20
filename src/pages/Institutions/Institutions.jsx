@@ -1,14 +1,12 @@
-/* eslint-disable react/no-unescaped-entities */
-import { Catalogs, Navbar } from "../components";
+import { Institution, Navbar } from "../../components";
 import { useEffect, useState } from "react";
-import { catalogService } from "../service";
-import "react-toastify/dist/ReactToastify.css";
+import { instService } from "../../service";
 
 const CatalogsPage = () => {
   const [item, setItem] = useState([]);
 
   const getData = async () => {
-    await catalogService
+    await instService
       .getAll()
       .then((res) => {
         setItem(res.data.data);
@@ -24,11 +22,11 @@ const CatalogsPage = () => {
 
   return (
     <div className="flex w-full flex-col p-3 gap-5">
-      <Navbar name={"Bo'limlar"} isHidden={false} />
+      <Navbar name={"Muassasalar"} isHidden={true} />
       {item.length === 0 ? (
-        <h1>Ayni damda bo'limlar mavjud emas!</h1>
+        <h1>Ayni damda muassasalar mavjud emas!</h1>
       ) : (
-        <Catalogs item={item} />
+        <Institution item={item} />
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import { instService } from "../service";
-import CatalogModal from "../utils/CatalogModal";
+import { instService } from "../../service";
+import CatalogModal from "../../utils/CatalogModal";
 import { useState } from "react";
 
 /* eslint-disable react/prop-types */
