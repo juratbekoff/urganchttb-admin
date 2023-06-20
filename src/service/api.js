@@ -1,5 +1,11 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://api.urganchttb.uz/api";
+const api = axios.create({
+  baseURL: "https://api.urganchttb.uz/api",
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/json",
+  },
+});
 
-export default axios;
+export default api;
