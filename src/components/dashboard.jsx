@@ -5,22 +5,22 @@ const Dashboard = ({ item }) => {
   const data = [
     {
       title: "Arizalar",
-      count: item.appCount,
+      count: item.appCount || 0,
       link: "/applications",
     },
     {
       title: "Bo'limlar",
-      count: item.catologsCount,
+      count: item.catologsCount || 0,
       link: "/catalogs",
     },
     {
       title: "Muassasalar",
-      count: item.instCount,
+      count: item.instCount || 0,
       link: "/institutions",
     },
     {
       title: "Maqolalar",
-      count: item.postCount,
+      count: item.postCount || 0,
       link: "/posts",
     },
   ];

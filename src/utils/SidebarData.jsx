@@ -15,4 +15,8 @@ export const SidebarData = [
     to: "/institutions",
     title: "Muassasalar",
   },
+  {
+    to: "/posts",
+    title: "Maqolalar",
+  },
 ];

@@ -24,7 +24,7 @@ const AppPage = () => {
 
   return (
     <div className="flex w-full flex-col p-3 gap-5">
-      <Navbar name={"Arizalar"} isHidden={false} />
+      <Navbar name={"Arizalar"} isHidden={true} />
       {item.length === 0 ? (
         <h1>Ayni damda arizalar yo'q!</h1>
       ) : (

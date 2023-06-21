@@ -11,7 +11,7 @@ const Sidebar = () => {
       >
         Urganch-TTB
       </Link>
-      <ul className="flex flex-col text-white gap-1 mb-5 pb-[400px]">
+      <ul className="flex flex-col text-white gap-1 mb-5 pb-[450px]">
         {SidebarData.map((elem) => {
           return (
             <Link
@@ -24,7 +24,7 @@ const Sidebar = () => {
           );
         })}
       </ul>
-      <h3 className="text-[18px] text-white p-2 flex gap-1 cursor-pointer hover:bg-[#df1e1e] hover:transition-all">
+      <h3 className="hidden text-[18px] text-white p-2 flex gap-1 cursor-pointer hover:bg-[#df1e1e] hover:transition-all">
         Chiqish
       </h3>
     </div>

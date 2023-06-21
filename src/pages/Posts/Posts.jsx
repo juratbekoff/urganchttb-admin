@@ -1,13 +1,13 @@
-import { Institution, Navbar } from "../../components";
+import { Posts, Navbar } from "../../components";
 import { useEffect, useState } from "react";
-import { instService } from "../../service";
+import { postService } from "../../service";
 import { Link } from "react-router-dom";
 
-const CatalogsPage = () => {
+const PostsPage = () => {
   const [item, setItem] = useState([]);
 
   const getData = async () => {
-    await instService
+    await postService
       .getAll()
       .then((res) => {
         setItem(res.data.data);
@@ -23,15 +23,15 @@ const CatalogsPage = () => {
 
   return (
     <div className="flex w-full flex-col p-3 gap-5">
-      <Navbar name={"Muassasalar"} isHidden={true} />
+      <Navbar name={"Maqolalar"} isHidden={true} />
       {item.length === 0 ? (
-        <h1>Ayni damda muassasalar mavjud emas!</h1>
+        <h1>Ayni damda maqolalar mavjud emas!</h1>
       ) : (
-        <Institution item={item} />
+        <Posts item={item} />
       )}
       <div className="w-full flex justify-start">
         <Link
-          to={"/add-inst"}
+          to={"/add-post"}
           className="cursor-pointer px-6 py-3 w-[10%] bg-[#425568] text-white rounded-[5px] hover:bg-[#344352]"
         >
           +Qoshish
@@ -41,4 +41,4 @@ const CatalogsPage = () => {
   );
 };
 
-export default CatalogsPage;
+export default PostsPage;

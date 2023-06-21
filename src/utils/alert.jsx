@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-const alert = (type) => {
+const alert = (type, err, msg) => {
   const props = {
     position: "top-right",
     autoClose: 400,
@@ -13,10 +13,10 @@ const alert = (type) => {
 
   switch (type) {
     case "SUCCESS":
-      toast.success("Xabaringiz muvaffaqiyatli yuborildi!", props);
+      toast.success(msg ? msg : "Xabaringiz muvaffaqiyatli yuborildi!", props);
       break;
     case "ERROR":
-      toast.error("Something went wrong!", props);
+      toast.error(err ? err : "Something went wrong!", props);
       break;
     default:
       toast("Wait! Default message!", props);

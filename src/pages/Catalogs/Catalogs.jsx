@@ -2,7 +2,6 @@
 import { Catalogs, Navbar } from "../../components";
 import { useEffect, useState } from "react";
 import { catalogService } from "../../service";
-import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 
 const CatalogsPage = () => {
@@ -33,7 +32,7 @@ const CatalogsPage = () => {
       )}
       <div className="w-full flex justify-start">
         <Link
-          to={"/add"}
+          to={"/add-catalog"}
           className="cursor-pointer px-6 py-3 w-[10%] bg-[#425568] text-white rounded-[5px] hover:bg-[#344352]"
         >
           +Qoshish

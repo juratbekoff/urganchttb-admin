@@ -2,12 +2,12 @@
 import { Navbar } from "../../components";
 import { useState } from "react";
 import alert from "../../utils/alert";
-import { catalogService } from "../../service/catalogs";
+import { instService } from "../../service/";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
 
-const AddCatalog = () => {
+const AddInst = () => {
   const [items, setItems] = useState({ title: "", descr: "" });
   const [file, setFile] = useState({ image: "" });
   const [loading, setLoading] = useState(false);
@@ -30,7 +30,7 @@ const AddCatalog = () => {
     formData.append("title", items.title);
     formData.append("descr", items.descr);
 
-    await catalogService
+    await instService
       .create(formData)
       .then((res) => {
         console.log(res.data);
@@ -49,8 +49,9 @@ const AddCatalog = () => {
   return (
     <div className="flex w-full flex-col p-3 gap-5">
       <ToastContainer />
-      <Navbar name={"Yangi bo'lim qo'shish"} isHidden={true} />
-      <Link to={"/catalogs"}> {"<-- Ortga"} </Link>
+      <Navbar name={"Yangi muassasa qo'shish"} isHidden={true} />
+
+      <Link to={"/institutions"}> {"<-- Ortga"} </Link>
 
       <form
         className="w-full flex flex-col gap-2 items-center"
@@ -60,29 +61,29 @@ const AddCatalog = () => {
           className="w-[30%] bg-white border border-gray-300 rounded-md text-sm text-gray-900 p-[5.1px] mt-[2px] cursor-pointer"
           id="file_input"
           type="file"
-          required
           onChange={changeIFileHandler}
           name="image"
+          required
         />
         <input
           type="text"
           placeholder="Sarlavha"
-          required
           className="w-[30%] mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block rounded-md sm:text-sm focus:ring-1 max-md:py-1 max-md:placeholder:text-[13.5px] max-md:rounded"
           onChange={changeInputHandler}
           name="title"
           value={items.title}
+          required
         />
 
         <textarea
           cols="10"
           rows="5"
-          required
           placeholder="Tavsifini kiriting"
           className="w-[30%] mt-1 px-3 py-1 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block rounded-md sm:text-sm focus:ring-1 placeholder:text-[15px]"
           onChange={changeInputHandler}
           name="descr"
           value={items.descr}
+          required
         ></textarea>
 
         <button
@@ -101,4 +102,4 @@ const AddCatalog = () => {
   );
 };
 
-export default AddCatalog;
+export default AddInst;
