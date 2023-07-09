@@ -1,28 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
-import { appService } from "../service";
-import AppModal from "../utils/AppModal";
-import { useState } from "react";
+import { lsService } from "../service";
+import { api_url } from "./../utils/api_url";
 
 /* eslint-disable react/prop-types */
-const Applications = ({ item }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [elem, setElem] = useState([]);
-
-  const onRead = (id) => {
-    setShowModal(true);
-    const data = item.filter((elem) => elem.id === id);
-    setElem(data);
-  };
-
+const Leadership = ({ item }) => {
   const onDelete = async (id) => {
-    await appService.delete(id);
+    await lsService.delete(id);
   };
 
   return (
     <>
-      <div
-        className={showModal ? "hidden" : `relative overflow-x-auto shadow-md`}
-      >
+      <div className={`overflow-x-auto overflow-y-auto shadow-md`}>
         <table className="w-full text-sm text-left text-gray-700">
           <thead className="text-xs text-gray-800 uppercase bg-gray-100 border-b-[1px] border-b-gray-400">
             <tr>
@@ -30,16 +18,19 @@ const Applications = ({ item }) => {
                 #ID
               </th>
               <th scope="col" className="px-6 py-3">
-                Ism-familiya
+                Ism-Familiya
               </th>
               <th scope="col" className="px-6 py-3">
-                Email
+                Rasm
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Lavozimi
               </th>
               <th scope="col" className="px-6 py-3">
                 Telefon raqam
               </th>
               <th scope="col" className="px-6 py-3">
-                Xabar
+                Email
               </th>
               <th scope="col" className="px-6 py-3">
                 Action
@@ -51,26 +42,31 @@ const Applications = ({ item }) => {
               return (
                 <tr
                   key={elem.id}
-                  className="bg-white border-b-2 hover:bg-gray-50 "
+                  className="bg-white border-b-2 hover:bg-gray-50"
                 >
                   <td className="px-6 py-4 font-medium">{elem.id}</td>
-                  <th
-                    scope="row"
-                    className="px-6 py-4  whitespace-nowrap font-medium "
-                  >
-                    {elem.name} {elem.surname}
-                  </th>
-                  <td className="px-6 py-4 font-medium">{elem.email}</td>
-                  <td className="px-6 py-4 font-medium">+{elem.phone}</td>
-                  <td
-                    onClick={() => onRead(elem.id)}
-                    className="px-6 py-4 font-medium text-blue-700 hover:underline cursor-pointer"
-                  >
-                    O'qish
+                  <td scope="row" className=" py-4 font-medium ">
+                    {elem.name}
                   </td>
-                  <td className="px-6 py-4 font-medium">
+                  <td className="pl-4  py-4 font-medium">
+                    <img
+                      src={`${api_url}/leadership/img/${elem.image}`}
+                      alt="surat yuklanmadi!"
+                      className="w-[80px] h-[11vh] border-[1px] border-gray-500 p-2"
+                    />
+                  </td>
+                  <td className="pl-4 py-4 font-medium cursor-pointer">
+                    {elem.position}
+                  </td>
+                  <td className="pl-4 py-4 font-medium cursor-pointer">
+                    {elem.phone}
+                  </td>
+                  <td className="pl-4 py-4 font-medium cursor-pointer">
+                    {elem.email}
+                  </td>
+                  <td className="pl-4 py-4 font-medium">
                     <a
-                      href="/applications"
+                      href="/leadership"
                       onClick={() => onDelete(elem.id)}
                       className="font-medium text-red-600  hover:underline cursor-pointer"
                     >
@@ -83,11 +79,8 @@ const Applications = ({ item }) => {
           </tbody>
         </table>
       </div>
-      {showModal && (
-        <AppModal onClose={() => setShowModal(false)} elem={elem[0]} />
-      )}
     </>
   );
 };
 
-export default Applications;
+export default Leadership;

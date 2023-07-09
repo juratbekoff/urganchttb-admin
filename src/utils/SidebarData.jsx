@@ -19,4 +19,8 @@ export const SidebarData = [
     to: "/posts",
     title: "Maqolalar",
   },
+  {
+    to: "/leadership",
+    title: "Rahbariyat",
+  },
 ];

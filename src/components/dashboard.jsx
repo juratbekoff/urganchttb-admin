@@ -23,6 +23,11 @@ const Dashboard = ({ item }) => {
       count: item.postCount || 0,
       link: "/posts",
     },
+    {
+      title: "Rahbariyat",
+      count: item.lshCount || 0,
+      link: "/leadership",
+    },
   ];
 
   return (

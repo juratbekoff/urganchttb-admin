@@ -8,6 +8,8 @@ import {
   AddInstPage,
   PostsPage,
   AddPostPage,
+  LeadershipPage,
+  AddLeaderPage,
 } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -25,6 +27,8 @@ function App() {
         <Route path="/add-inst" element={<AddInstPage />} />
         <Route path="/posts" element={<PostsPage />} />
         <Route path="/add-post" element={<AddPostPage />} />
+        <Route path="/leadership" element={<LeadershipPage />} />
+        <Route path="/add-leader" element={<AddLeaderPage />} />
       </Routes>
     </div>
   );

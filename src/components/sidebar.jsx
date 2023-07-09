@@ -11,7 +11,7 @@ const Sidebar = () => {
       >
         Urganch-TTB
       </Link>
-      <ul className="flex flex-col text-white gap-1 mb-5 pb-[450px]">
+      <ul className="flex flex-col text-white gap-1 mb-5 pb-[360px]">
         {SidebarData.map((elem) => {
           return (
             <Link
