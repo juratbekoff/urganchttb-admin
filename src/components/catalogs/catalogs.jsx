@@ -59,7 +59,7 @@ const Catalogs = ({ item }) => {
                   </th>
                   <td className="px-6 py-4 font-medium">
                     <img
-                      src={`https://api.urganchttb.uz/api/catalogs/img/${elem.image}`}
+                      src={`https://api.urganch-ttb.uz/api/catalogs/img/${elem.image}`}
                       alt="yuklanmadi!"
                       className="w-[80px] h-[11vh] border-[1px] border-gray-500 p-2"
                     />
