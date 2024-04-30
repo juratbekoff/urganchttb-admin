@@ -25,6 +25,7 @@ const CatalogsPage = () => {
   return (
     <div className="flex w-full flex-col p-3 gap-5">
       <Navbar name={"Bo'limlar"} isHidden={true} />
+
       {item.length === 0 ? (
         <h1>Ayni damda bo'limlar mavjud emas!</h1>
       ) : (

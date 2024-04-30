@@ -32,9 +32,6 @@ const AppModal = ({ onClose, elem }) => {
         <span className="p-0 m-0 text-right cursor-pointer" onClick={onClose}>
           <CloseIcon fontSize="small" />
         </span>
-        <div className="flex justify-center pb-3">
-          <h1 className="mb-3 text-[20px] font-medium">Arizalar</h1>
-        </div>
         <div className="flex flex-col gap-2">
           {data.map((elem, key) => {
             return (

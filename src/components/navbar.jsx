@@ -3,7 +3,7 @@ const Navbar = ({ name, isHidden }) => {
   return (
     <div className="flex flex-col">
       <div className="flex justify-between items-center pr-10 p-3 border-b-2 shadow-sm bg-gray-50">
-        <h1 className="text-[22px] font-semibold pl-5">{name}</h1>
+        <h1 className="text-base font-semibold pl-2">{name}</h1>
         <input
           type="search"
           className={

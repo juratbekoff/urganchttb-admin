@@ -7,3 +7,4 @@ export { default as Leadership } from "./leadership";
 export * from "./catalogs";
 export * from "./institutions";
 export * from "./posts";
+export * from "./open-documents"

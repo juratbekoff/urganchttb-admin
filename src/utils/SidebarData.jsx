@@ -23,4 +23,8 @@ export const SidebarData = [
     to: "/leadership",
     title: "Rahbariyat",
   },
+  {
+    to: "/open-documents",
+    title: "Ochiq ma'lumotlar",
+  }
 ];

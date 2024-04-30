@@ -2,6 +2,7 @@
 import { catalogService } from "../../service";
 import CatalogModal from "../../utils/CatalogModal";
 import { useState } from "react";
+import {api_url} from "../../utils/api_url.js";
 
 /* eslint-disable react/prop-types */
 const Catalogs = ({ item }) => {
@@ -59,7 +60,7 @@ const Catalogs = ({ item }) => {
                   </th>
                   <td className="px-6 py-4 font-medium">
                     <img
-                      src={`https://api.urganch-ttb.uz/api/catalogs/img/${elem.image}`}
+                      src={`${api_url}/catalogs/img/${elem.image}`}
                       alt="yuklanmadi!"
                       className="w-[80px] h-[11vh] border-[1px] border-gray-500 p-2"
                     />
