@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://api.urganch-ttb.uz/api",
+    baseURL: import.meta.env.VITE_API_URL!,
     // baseURL: "http://localhost:8080/api",
 });
 
